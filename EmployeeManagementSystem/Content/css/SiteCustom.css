@@ -1,0 +1,30 @@
+﻿
+
+.highline {
+
+    text-align: center;
+    color: palevioletred;
+    border-bottom-color: darkblue;
+    border-bottom: solid;
+    padding-bottom: 20PX;
+}
+.highline2 {
+
+    text-align: center;
+    color: purple;
+    border-bottom-color: darkblue;
+    border-bottom: solid;
+    padding-bottom: 20PX;
+}
+.highlight{
+    table-layout:auto;
+    tab-size:6;
+    width:100%;
+    border-color:blueviolet;
+
+}
+#navbar,footer {
+ 
+    background-color: mediumpurple;
+    text-emphasis-color:aqua;
+}

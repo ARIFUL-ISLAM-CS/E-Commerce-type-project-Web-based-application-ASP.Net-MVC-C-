@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EmployeeManagementSystem.Models.EmployeeAjax>
+
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = null;
+}
+
+<table class="responsive-table" id="EmployeeTable">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model=>model.EmployeeName)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model=>model.EmployeeAddress)
+            </th> 
+            <th>
+                @Html.DisplayNameFor(model=>model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeDOB)
+            </th>
+            <th>
+               Image
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem=>item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeDOB)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.ImagePath)" height="70" width="65" />
+                </td>
+                <td>
+                    <a class="btn-small blue ligh" onclick="Edit('@Url.Action("AddOrEdit", "Ajax", new { id=@item.EmployeeID})')">Edit</a>
+                    <a class="btn-small red darken-2" onclick="Delete('@Url.Action("Delete", "Ajax", new { id=@item.EmployeeID})')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,51 @@
+﻿@model EmployeeManagementSystem.Models.tblUsers
+
+@{
+
+      ViewBag.Title = "Login";
+}
+
+
+<h3 class="highline">User Login</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <form class="col s12">
+
+            @Html.ValidationSummary(true, "")
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.UserName)
+                </div>
+                <div class="input-field col s10">
+                    @Html.EditorFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName, "")
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s2">
+                    @Html.LabelFor(model => model.UserPassword)
+                </div>
+                <div class="input-field col s10">
+                    @Html.EditorFor(model => model.UserPassword)
+                    @Html.ValidationMessageFor(model => model.UserPassword, "")
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s10">
+                    <input type="submit" value="Login" class="btn" />
+                </div>
+            </div>
+        </form>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Go to Sign up", "Register")
+</div>
+
+
